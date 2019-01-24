@@ -26,11 +26,11 @@ def strength(can_help1, need_help1, can_help2, need_help2):
     return (x+y)/2, range
 
 
-with open('testdata.csv') as csv_file:  # assuming data format is 'name, kerberos, can_help list, need_help list'
+with open('testdata.csv') as csv_file:  # data format is 'timestamp, name, kerberos, can_help list, need_help list'
     csv_reader = csv.reader(csv_file, delimiter=',')
     for row in csv_reader:  # creating user data dict + kerb dict
-        data[row[1]] = (set(row[2].split()), set(row[3].split()))  # assuming classes split by spaces
-        kerb_to_name[row[1]] = row[0]
+        data[row[2]] = (set(row[3].split()), set(row[4].split()))  # assuming classes split by spaces
+        kerb_to_name[row[2]] = row[1]
 
     for user in data:  # create dict of possible matches
         for poss in data:
@@ -46,4 +46,3 @@ with open('testdata.csv') as csv_file:  # assuming data format is 'name, kerbero
         matches[user] = sorted(matches[user], key=lambda s: s[0][0], reverse=True)  # not sure if range is auto sorted
 
     print(matches)
-    
