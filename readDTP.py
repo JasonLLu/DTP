@@ -7,7 +7,7 @@ import csv
 
 
 #Grabs data from google sheets as a string
-csv_content = requests.get('https://docs.google.com/spreadsheets/d/1mEtPd_cNuc8YISlq_rxUc9cXlzZxo4_nkmmcq5CEli4/export?format=csv&id=1mEtPd_cNuc8YISlq_rxUc9cXlzZxo4_nkmmcq5CEli4').text
+csv_content = requests.get('https://docs.google.com/spreadsheets/d/1wquNQ_ICc298ZLmLD6Of6MdIMa-zr5kQ2N1EyelSBJ4/export?format=csv&id=1wquNQ_ICc298ZLmLD6Of6MdIMa-zr5kQ2N1EyelSBJ4').text
 
 #Converts string to csv file
 f = open('csv_content.csv','w')
